@@ -23,4 +23,5 @@ describe('UserList - Rendering', () => {
 
     expect(await screen.findByText(/mike/)).toBeInTheDocument();
   });
+  
 });
