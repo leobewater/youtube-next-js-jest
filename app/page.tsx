@@ -33,7 +33,7 @@ export default function Home() {
         <button onClick={() => 
         setTimeout(() => {
           setShowText(!showText)
-        }, 100)
+        }, 1100)
           } className='border ml-2 p-2 bg-slate-300 rounded'>Show Text</button>
       </div>
     </main>
