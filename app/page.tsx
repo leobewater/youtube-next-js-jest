@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import styles from './page.module.css';
+import { UserProfile } from '@/components/UserProfile';
 
 export default function Home() {
   const [showText, setShowText] = useState(false);
@@ -30,12 +31,23 @@ export default function Home() {
       </div>
       <div>
         {showText && <span>This is the text!</span>}
-        <button onClick={() => 
-        setTimeout(() => {
-          setShowText(!showText)
-        }, 1100)
-          } className='border ml-2 p-2 bg-slate-300 rounded'>Show Text</button>
+        <button
+          onClick={() =>
+            setTimeout(() => {
+              setShowText(!showText);
+            }, 1100)
+          }
+          className="border ml-2 p-2 bg-slate-300 rounded"
+        >
+          Show Text
+        </button>
       </div>
+      <UserProfile
+        displayName={'anasdfadfadfasfasdfasdfasdfasdfasdsson'}
+        username="anson"
+        email="anson@anson.com"
+        isEmailVerified={false}
+      />
     </main>
   );
 }
