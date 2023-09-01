@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 
@@ -57,13 +57,21 @@ describe('Home Page', () => {
 
       // trigger click "Show Text" button
       const showTextButton = screen.getByRole('button', { name: 'Show Text' });
-      
+
       // fire a user-event
       await userEvent.click(showTextButton);
       //expect(screen.getByText(/This is the text!/)).toBeInTheDocument();
 
       // use findByText with async or waiting for some values to be updating. findBy default max waiting for 1000ms or define your own timeout
-      expect(await screen.findByText(/This is the text!/, {}, {timeout: 5000})).toBeInTheDocument();
+      //expect(await screen.findByText(/This is the text!/, {}, {timeout: 5000})).toBeInTheDocument();
+
+      // use waitFor, default timeout is 1000ms
+      await waitFor(
+        () => {
+          expect(screen.getByText(/This is the text!/)).toBeInTheDocument();
+        },
+        { timeout: 5000 }
+      );
     });
   });
 });
