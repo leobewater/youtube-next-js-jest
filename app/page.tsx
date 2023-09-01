@@ -13,7 +13,12 @@ export default function Home() {
         <label htmlFor="specificText">Enter Specific Text:</label>
         <input id="specificText" className='border p-2 ml-2 rounded'/>
       </div>
-
+      <div>
+        <input placeholder="Search..." className='border p-2 ml-2 rounded'/>
+      </div>
+      <div>
+        <input value="AUDI Q5" onChange={() => {}} className='border p-2 ml-2 rounded'/>
+      </div>
     </main>
   );
 }

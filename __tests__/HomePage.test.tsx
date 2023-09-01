@@ -27,4 +27,14 @@ describe('Home Page - Rendering', () => {
     render(<Home />);
     expect(screen.getByLabelText(/Enter Specific Text/)).toBeInTheDocument();
   });
+
+  it('should find input field by placeholder text Search', () => {
+    render(<Home />);
+    expect(screen.getByPlaceholderText(/Search.../)).toBeInTheDocument();
+  });
+
+  it('should find input field by display value', () => {
+    render(<Home />);
+    expect(screen.getByDisplayValue(/AUDI Q5/)).toBeInTheDocument();
+  });
 });
