@@ -6,8 +6,8 @@
 
 //import '@testing-library/jest-dom/extend-expect' // use this when @testing-library/jest-dom is before v6.0.0
 import '@testing-library/jest-dom'; // use this when @testing-library/jest-dom is v6.0
-import { server } from './mocks/server'
-;
+import { server } from './mocks/server';
+import 'whatwg-fetch';
 
 // before running all tests
 beforeAll(() => {
