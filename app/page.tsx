@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import styles from './page.module.css';
 import { UserProfile } from '@/components/UserProfile';
+import { UserList } from '@/components/UserList';
 
 export default function Home() {
   const [showText, setShowText] = useState(false);
@@ -48,6 +49,7 @@ export default function Home() {
         email="anson@anson.com"
         isEmailVerified={false}
       />
+      <UserList />
     </main>
   );
 }
