@@ -15,9 +15,14 @@ export const UserList = () => {
   }, []);
 
   return (
-    <div>
+    <div className="mt-8">
       {users.length > 0 ? (
-        users.map((user) => <div key={user.id}>{user.username}</div>)
+        <div>
+          <h2 className="text-xl">List Of Users</h2>
+          {users.map((user) => (
+            <div key={user.id}>{user.username}</div>
+          ))}
+        </div>
       ) : (
         <span>No Users</span>
       )}
