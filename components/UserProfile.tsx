@@ -23,7 +23,7 @@ export const UserProfile = ({
         <span>Email: {email}</span>
       </div>
       <div>
-        Verified: {isEmailVerified ? 'Email Verified' : 'Email Not Verified'}
+        Verified: <span>{isEmailVerified ? 'Email Verified' : 'Email Not Verified'}</span>
       </div>
     </div>
   );
