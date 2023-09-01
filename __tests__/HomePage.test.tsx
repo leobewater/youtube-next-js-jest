@@ -60,18 +60,17 @@ describe('Home Page', () => {
 
       // fire a user-event
       await userEvent.click(showTextButton);
-      //expect(screen.getByText(/This is the text!/)).toBeInTheDocument();
 
-      // use findByText with async or waiting for some values to be updating. findBy default max waiting for 1000ms or define your own timeout
-      //expect(await screen.findByText(/This is the text!/, {}, {timeout: 5000})).toBeInTheDocument();
+      // use findBy methods are a combination of getBy queries and waitFor, use it with async or waiting for some values to be updating. Default max waiting is 1000ms or define your own timeout
+      expect(await screen.findByText(/This is the text!/, {}, {timeout: 5000})).toBeInTheDocument();
 
-      // use waitFor, default timeout is 1000ms
-      await waitFor(
-        () => {
-          expect(screen.getByText(/This is the text!/)).toBeInTheDocument();
-        },
-        { timeout: 5000 }
-      );
+      // OR use waitFor, default timeout is 1000ms
+      // await waitFor(
+      //   () => {
+      //     expect(screen.getByText(/This is the text!/)).toBeInTheDocument();
+      //   },
+      //   { timeout: 5000 }
+      // );
     });
   });
 });
