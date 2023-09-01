@@ -11,14 +11,16 @@ describe('Home Page - Rendering', () => {
   it('should have button with text Click Me', () => {
     render(<Home />);
     // search for button with text Click Me
-    expect(screen.getByRole("button", {name: 'Click Me'})).toBeInTheDocument();
-  })
+    expect(
+      screen.getByRole('button', { name: 'Click Me' })
+    ).toBeInTheDocument();
+  });
 
   it('should have input field with label Enter Random Text', () => {
     render(<Home />);
     // find one input field
     //expect(screen.getByRole('textbox')).toBeInTheDocument();
-    
+
     // find label text
     expect(screen.getByLabelText(/Enter Random Text/)).toBeInTheDocument();
   });
@@ -36,5 +38,10 @@ describe('Home Page - Rendering', () => {
   it('should find input field by display value', () => {
     render(<Home />);
     expect(screen.getByDisplayValue(/AUDI Q5/)).toBeInTheDocument();
+  });
+
+  it('should not find element with text: This is the text!', () => {
+    render(<Home />);
+    expect(screen.queryByText('This is the text!')).not.toBeInTheDocument();
   });
 });
