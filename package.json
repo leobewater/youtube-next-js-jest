@@ -33,6 +33,7 @@
     "jest-environment-jsdom": "^29.6.4",
     "msw": "^1.2.5",
     "ts-jest": "^29.1.1",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "whatwg-fetch": "^3.6.18"
   }
 }
