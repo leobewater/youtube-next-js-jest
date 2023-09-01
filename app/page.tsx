@@ -4,6 +4,7 @@ import { useState } from 'react';
 import styles from './page.module.css';
 import { UserProfile } from '@/components/UserProfile';
 import { UserList } from '@/components/UserList';
+import { LoginForm } from '@/components/LoginForm';
 
 export default function Home() {
   const [showText, setShowText] = useState(false);
@@ -50,6 +51,7 @@ export default function Home() {
         isEmailVerified={false}
       />
       <UserList />
+      <LoginForm />
     </main>
   );
 }
